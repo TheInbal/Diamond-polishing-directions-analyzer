@@ -59,3 +59,10 @@ Determining whether the axis points towards or away from the face of the stone:
 
 If the angle $< 90^\circ$ then the axis points away from the stone, and if the angle $> 90^\circ$ then the axis points towards the st
 
+
+\[
+\begin{pmatrix} e_1 & e_2 & e_3 \end{pmatrix}
+= 
+\begin{pmatrix} a_1 & a_2 & a_3 \end{pmatrix} \cdot [S]
+\]
+
