@@ -15,23 +15,47 @@ This tool is designed to automate the analysis process and provide a clearer and
 
 # How is it works?
 
-System definitions:
-𝒁 - Culet direction of the stone:
-(25) 𝒁 = (𝒆𝟏 𝒆𝟐 𝒆𝟑) ⋅ (
-𝑍𝑒1
-𝑍𝑒2
-𝑍𝑒3
-) = 𝑍𝑒1𝒆𝟏 + 𝑍𝑒2𝒆𝟐 + 𝑍𝑒3𝒆𝟑
-𝑵 - Normal to facet:
-(26) 𝑵 = (𝒆𝟏 𝒆𝟐 𝒆𝟑) ⋅ (
-𝑁𝑒1
-𝑁𝑒2
-𝑁𝑒3
-) = 𝑁𝑒1𝒆𝟏 + 𝑁𝑒2𝒆𝟐 + 𝑁𝑒3𝒆𝟑
-Orientation matrix:
-(27) [𝑈𝐴] = [
-𝑎11 𝑎12 𝑎13
-𝑎21 𝑎22 𝑎23
-𝑎31 𝑎32 𝑎33
-]
+\section{Analysis Method}
+
+To achieve the primary objectives of this study to find a correlation between the optimal polishing directions determined through the polishing tests and the crystallographic directions, the analysis required the alignment of three coordinate systems:
+
+\begin{itemize}
+    \item Crystallographic Coordinate System (3D indices)
+    \item Laboratory Coordinate System (3D indices)
+    \item Facet Coordinate System (2D indices)
+\end{itemize}
+
+The analysis was conducted using Python according to the following algorithmic approach.
+
+\subsection{System Definitions}
+
+\begin{itemize}
+    \item Culet direction of the stone
+    \item Normal to facet
+    \item Orientation matrix
+\end{itemize}
+
+\subsection{Step 1: Transformation matrix from lab CS to crystallographic CS}
+
+Creating a transformation matrix $[S]$ to convert vectors from the lab CS to the crystallographic CS:
+
+A negative sign is assigned to the $y$-axis to account for the desynchronization introduced during the scanning process between the polishing and diffractometer laboratories.
+
+\subsection{Step 2: Define the facet coordinate system (2D)}
+
+Convert vectors from lab CS to crystallographic CS.
+
+Setting two orthogonal vectors on the facet.
+
+Creating a transformation matrix $[F]$ to convert vectors from the crystallographic CS to the facet CS.
+
+Given that the normal is orthogonal to the facet, multiplication of a vector by the matrix $F$ will annihilate the third component in the facet's plane, consequently reducing the system to two dimensions.
+
+\subsection{Step 3}
+
+The orientation of the axis is determined by the angle relative to the stone. Specifically, it can be found for the three basis vectors of the crystal $[1\ 0\ 0]$, $[0\ 1\ 0]$, $[0\ 0\ 1]$.
+
+Determining whether the axis points towards or away from the face of the stone:
+
+If the angle $< 90^\circ$ then the axis points away from the stone, and if the angle $> 90^\circ$ then the axis points towards the st
 
