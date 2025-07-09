@@ -43,4 +43,5 @@ Project repository link - https://github.com/TheInbal/Diamond-polishing-directio
 
 
 ## Extra Information
-This project was written as part of this python course https://github.com/Code-Maven/wis-python-course-2025-03.git.
+* The polishing processes in this research are carried out by an external party. Some of the data used in the project originates from the same external source, which collects information about the polishing for us. We study this data within a crystallographic framework and using an X-ray diffractometer. Inside the code, this external source called 'polisher'.
+* This project was written as part of this python course https://github.com/Code-Maven/wis-python-course-2025-03.git.
