@@ -23,10 +23,15 @@ This tool is designed to automate the analysis process and provide a clearer and
 # Input and Output
 ### Inputs:
 
-1. Polish scan height data (csv file)
-2. Facets normals as a list of vectors (csv file)
-3. Crystal orientation matrix
-4. Diamond's culet direction vector
+To run the program you should have a folder which includes 5 text files:
+1. Transformation_matrix (3x3 matrix), components seperated by tab.
+2. Normals - facets normals (3 components per normal x, y, z), components seperated by tab.
+3. Target_facets - every facet number in a different line.
+4. Z_vector - diamond's culet direction vector, components seperated by tab.
+5. Good_polish_ranges - ranges (in angles) of good polishing from polisher scans. Every row built like folowing: [from1, to1, from2, to2, from3, to3, from4, to4, facet number]
+
+This will be your 'Data folder'. Make sure to fill the files in the same format as it appears in the example folder here on github!
+
 
 ### Output:
 
@@ -36,8 +41,9 @@ Good polish directions ranges will be signed on the radial CS, and projections o
 
 # Use instructions and requirements
 To run this project you need: 
-
 Python 3 with numpy, pandas and matplotlib lybraries. 
+
+**Run command:** Python  Diamond_polishing_project.py  Data_folder_path  stone_name
 
 Project repository link - https://github.com/TheInbal/Diamond-polishing-directions-analyzer.git
 
